@@ -1,8 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NLW Spacetime: Front-end (Trilha Ignite)
 
-## Getting Started
+Este é um projeto [Next.js](https://nextjs.org/) criado com [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-First, run the development server:
+## Aula 1 - Iniciando o projeto
+
+- React + NextJS
+- Conceitos de react: componentes, propriedades e roteamento.
+- TailwindCSS
+- ESLint + Prettier Tailwind
+
+Adicionamos as configurações de ESLint da Rocketseat com o comando `npm i @rocketseat/eslint-config -D` e o plugin prettier tailwind com o comando `npm i prettier-plugin-tailwindcss -D`.
+
+## Começando
+
+Para rodar o servidor em modo de desenvolvimento:
 
 ```bash
 npm run dev
@@ -12,23 +23,9 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Este projeto usa [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) para otimizar automaticamente e carregar o Inter,uma fonte customizada do Google.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Documentação Next.js](https://nextjs.org/docs) - aprenda sobre recursos e API do Next.js.
+- [Aprenda Next.js](https://nextjs.org/learn) - um tutorial interativo Next.js.
