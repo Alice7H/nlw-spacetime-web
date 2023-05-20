@@ -29,3 +29,14 @@ Este projeto usa [`next/font`](https://nextjs.org/docs/basic-features/font-optim
 
 - [Documentação Next.js](https://nextjs.org/docs) - aprenda sobre recursos e API do Next.js.
 - [Aprenda Next.js](https://nextjs.org/learn) - um tutorial interativo Next.js.
+
+## Aula 2 - Layout front-end
+
+- Fontes: roboto e Bai Jamjuree
+- Estrutura visual da Home
+  - Blur background
+  - Stripes
+- Lista de memórias vazia
+- Perfil de usuário
+- Seção Hero
+- Copyright
