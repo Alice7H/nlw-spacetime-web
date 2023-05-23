@@ -41,7 +41,7 @@ Este projeto usa [`next/font`](https://nextjs.org/docs/basic-features/font-optim
 - Seção Hero
 - Copyright
 
-## Aula 3 - Autenticação e Upload
+## Aula 3 - Autenticação
 
 - Fluxo de autenticação
 - Configuração Github OAuth
@@ -57,6 +57,12 @@ O código de troca irá para o back-end que fará uma requisição ao Github que
 
 O token de acesso permite identificar o usuário e fazer chamadas ao Github como se fosse o usuário.
 
-O back-end fará a requisição para coletar informações do usuário e o enviará para o banco de dados.
-
 Na configuração Github OAuth, usamos CLIENT_ID e CLIENT_SECRET no novo OAuth criado e chamamos de `NLW_Spacetime(dev)`.
+
+Adicionamos o CLIENT_ID na requisição de login no Github Oauth e na rota `api/callback` recebemos o código de troca, usamos ele para fazer a requisição ao back-end, como resposta temos o token que salvamos nos cookies.
+
+Para extrair as informações do usuário precisamos decodificar as informações gerado pelo jwt, para isso, usamos o jwt-decode e o instalamos com o comando `npm i jwt-decode`.
+
+Usando o método decode do jwt-decode pegamos as informações do usuário para ser exibido no componente Profile.
+
+Obs: Imagens externas devem ser informadas nas configurações do Next.
