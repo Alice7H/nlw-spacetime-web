@@ -40,3 +40,23 @@ Este projeto usa [`next/font`](https://nextjs.org/docs/basic-features/font-optim
 - Perfil de usuário
 - Seção Hero
 - Copyright
+
+## Aula 3 - Autenticação e Upload
+
+- Fluxo de autenticação
+- Configuração Github OAuth
+- Obtendo Github `code` web
+- Salvando token nos cookies
+- Exibindo perfil do usuário
+
+OAuth significa 'Autorização Aberta', é um padrão que permite que um site ou aplicativo acesse recursos hospedados por outros aplicativos da Web em nome de um usuário.
+
+Na prática, usaremos recursos do Github, o front-end fará requisição de login com usuário no Github, que por sua vez retornará informações do usuário válido junto com um 'código de troca'.
+
+O código de troca irá para o back-end que fará uma requisição ao Github que retornará um 'token de acesso'.
+
+O token de acesso permite identificar o usuário e fazer chamadas ao Github como se fosse o usuário.
+
+O back-end fará a requisição para coletar informações do usuário e o enviará para o banco de dados.
+
+Na configuração Github OAuth, usamos CLIENT_ID e CLIENT_SECRET no novo OAuth criado e chamamos de `NLW_Spacetime(dev)`.
