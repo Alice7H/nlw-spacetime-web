@@ -66,3 +66,13 @@ Para extrair as informações do usuário precisamos decodificar as informaçõe
 Usando o método decode do jwt-decode pegamos as informações do usuário para ser exibido no componente Profile.
 
 Obs: Imagens externas devem ser informadas nas configurações do Next.
+
+## Aula 4 - Upload e nova memória
+
+- Definindo layout das rotas
+- Rota de logout
+- Página de nova memória
+- Middleware de autenticação
+- Criando nova memória
+
+Para facilitar na aplicação de CSS com o tailwind no elemento de formulário instalamos o @tailwindcss/forms com o comando `npm install -D @tailwindcss/forms` como dependência de desenvolvimento.
