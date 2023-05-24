@@ -67,7 +67,7 @@ Usando o método decode do jwt-decode pegamos as informações do usuário para 
 
 Obs: Imagens externas devem ser informadas nas configurações do Next.
 
-## Aula 4 - Upload e nova memória
+## Aula 4 - Rotas, Middleware e Nova memória(Layout)
 
 - Definindo layout das rotas
 - Rota de logout
