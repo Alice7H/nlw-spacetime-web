@@ -73,6 +73,14 @@ Obs: Imagens externas devem ser informadas nas configurações do Next.
 - Rota de logout
 - Página de nova memória
 - Middleware de autenticação
-- Criando nova memória
 
 Para facilitar na aplicação de CSS com o tailwind no elemento de formulário instalamos o @tailwindcss/forms com o comando `npm install -D @tailwindcss/forms` como dependência de desenvolvimento.
+
+## Aula 5 - Criação e listagem
+
+- Preview da mídia
+- Criando nova memória
+- Layout da listagem
+- Buscando memórias da API
+
+ Instalamos o js-cookie (API JavaScript simples e leve para lidar com cookies) com o comando `npm i js-cookie`. Como estamos usando o typescript executamos também o `npm i --save-dev @types/js-cookie` para extrair informações específicas, no caso, o token.
