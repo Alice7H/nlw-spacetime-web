@@ -36,7 +36,7 @@ export function NewMemoryForm() {
       },
     )
 
-    router.push('/')
+    router.push('/memories')
   }
 
   return (

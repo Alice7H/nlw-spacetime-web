@@ -9,6 +9,15 @@ export function Copyright() {
         rel="noreferrer"
       >
         Rocketseat
+      </a>{' '}
+      por{' '}
+      <a
+        className="underline hover:text-gray-100"
+        href="https://github.com/Alice7H"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Alice Hata
       </a>
     </div>
   )

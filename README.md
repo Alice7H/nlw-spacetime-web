@@ -82,5 +82,8 @@ Para facilitar na aplicação de CSS com o tailwind no elemento de formulário i
 - Criando nova memória
 - Layout da listagem
 - Buscando memórias da API
+- Exibindo detalhes da memória
 
  Instalamos o js-cookie (API JavaScript simples e leve para lidar com cookies) com o comando `npm i js-cookie`. Como estamos usando o typescript executamos também o `npm i --save-dev @types/js-cookie` para extrair informações específicas, no caso, o token.
+
+ Para a listagem, adicionamos a data de criação da memória e formatamos com a ajuda do dayjs que foi instalado com o comando `npm i dayjs`
