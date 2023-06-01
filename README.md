@@ -90,3 +90,7 @@ Para facilitar na aplicação de CSS com o tailwind no elemento de formulário i
  Instalamos o js-cookie (API JavaScript simples e leve para lidar com cookies) com o comando `npm i js-cookie`. Como estamos usando o typescript executamos também o `npm i --save-dev @types/js-cookie` para extrair informações específicas, no caso, o token.
 
  Para a listagem, adicionamos a data de criação da memória e formatamos com a ajuda do dayjs que foi instalado com o comando `npm i dayjs`
+
+## Complementos
+
+- Compartilhamento de memórias no e-mail, Twitter e no WhatsApp.

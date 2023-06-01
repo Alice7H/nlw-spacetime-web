@@ -1,4 +1,5 @@
 import { EmptyMemories } from '@/components/EmptyMemories'
+import { Share } from '@/components/Share'
 import { api } from '@/lib/api'
 import dayjs from 'dayjs'
 import { ArrowLeft } from 'lucide-react'
@@ -15,12 +16,12 @@ interface Memory {
 }
 
 interface MemoryDetailsProps {
-  params: {
-    id: string
-  }
+  params: { id: string }
+  searchParams: {}
 }
-export default async function MemoryDetails({ params }: MemoryDetailsProps) {
-  const { id } = params
+
+export default async function MemoryDetails(props: MemoryDetailsProps) {
+  const { id } = props.params
 
   const token = cookies().get('token')?.value
   const response = await api.get(`/memories/${id}`, {
@@ -57,6 +58,7 @@ export default async function MemoryDetails({ params }: MemoryDetailsProps) {
           <ArrowLeft className="h-4 w-4" />
           voltar à timeline
         </Link>
+        <Share memory={memory} />
       </div>
     </div>
   )
