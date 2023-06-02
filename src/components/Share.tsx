@@ -9,22 +9,18 @@ import {
   TwitterShareButton,
   TwitterIcon,
 } from 'next-share'
+import { Memory } from '@/types/Memory'
 
 interface Props {
-  memory: {
-    id: string
-    coverUrl: string
-    content: string
-    createdAt: string
-    isPublic: string
-  }
+  memory: Memory
 }
 
-export function Share(props: Props) {
+export function Share({ memory }: Props) {
   const pathname = usePathname()
   const appUrl = process.env.NEXT_PUBLIC_APP_URL as string
   const fullUrl = appUrl.concat(pathname)
-  const { memory } = props
+
+  if (memory === undefined) return null
 
   return (
     <div className="flex items-center justify-start gap-2">

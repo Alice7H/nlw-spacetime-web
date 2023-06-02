@@ -1,20 +1,14 @@
 import { EmptyMemories } from '@/components/EmptyMemories'
+import { SimplifyMemory } from '@/types/Memory'
 import { api } from '@/lib/api'
 import { cookies } from 'next/headers'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 import ptBr from 'dayjs/locale/pt-br'
 import dayjs from 'dayjs'
-import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
 
 dayjs.locale(ptBr)
-
-interface Memory {
-  id: string
-  coverUrl: string
-  excerpt: string
-  createdAt: string
-}
 
 export default async function Memories() {
   const token = cookies().get('token')?.value
@@ -22,7 +16,7 @@ export default async function Memories() {
   const response = await api.get('/memories', {
     headers: { Authorization: `Bearer ${token}` },
   })
-  const memories: Memory[] = response.data
+  const memories: SimplifyMemory[] = response.data
 
   if (memories.length === 0) return <EmptyMemories />
 

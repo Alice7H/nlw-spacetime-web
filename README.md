@@ -93,4 +93,5 @@ Para facilitar na aplicação de CSS com o tailwind no elemento de formulário i
 
 ## Complementos
 
-- Compartilhamento de memórias no e-mail, Twitter e no WhatsApp.
+- Compartilhamento de memórias no e-mail, Twitter e no WhatsApp. Usando `next-share`
+- Edição/Atualização de memória
