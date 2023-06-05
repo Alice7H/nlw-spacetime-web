@@ -6,3 +6,11 @@ body {
   -webkit-font-smothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
+.react-datetime-picker__wrapper {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

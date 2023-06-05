@@ -6,6 +6,7 @@ import { MediaPicker } from './MediaPicker'
 import Cookie from 'js-cookie'
 import { api } from '@/lib/api'
 import { Memory } from '@/types/Memory'
+import { DTimePicker } from './DateTimePicker'
 
 interface Props {
   oldMemory?: Memory
@@ -14,14 +15,18 @@ interface Props {
 export function MemoryForm({ oldMemory }: Props) {
   const router = useRouter()
   const token = Cookie.get('token') as string
+
   const [memory, setMemory] = useState<Memory | null>(oldMemory || null)
+  const [memoryDateTime, setMemoryDateTime] = useState(
+    memory?.createdAt || new Date(),
+  )
 
   async function handleUpdateMemory(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
     const fileToUpload = formData.get('coverURL') as File
-    let coverUrl = ''
     const hasFileToUpload = fileToUpload && fileToUpload.size > 0
+    let coverUrl = ''
 
     if (hasFileToUpload) {
       await deleteOldImage()
@@ -29,11 +34,13 @@ export function MemoryForm({ oldMemory }: Props) {
     } else {
       coverUrl = oldMemory?.coverUrl as string
     }
+    formData.set('coverUrl', coverUrl)
+    formData.set('createdAt', memoryDateTime as string)
 
     if (oldMemory === undefined) {
-      await createMemory(coverUrl, formData)
+      await createMemory(formData)
     } else {
-      await updateMemory(coverUrl, formData)
+      await updateMemory(formData)
     }
     router.push('/memories')
   }
@@ -46,13 +53,14 @@ export function MemoryForm({ oldMemory }: Props) {
     }
   }
 
-  async function createMemory(coverUrl: string, formData: FormData) {
+  async function createMemory(formData: FormData) {
     await api.post(
       '/memories',
       {
-        coverUrl,
+        coverUrl: formData.get('coverUrl'),
         content: formData.get('content'),
         isPublic: formData.get('isPublic'),
+        createdAt: formData.get('createdAt'),
       },
       {
         headers: {
@@ -69,13 +77,14 @@ export function MemoryForm({ oldMemory }: Props) {
     return uploadResponse.data.fileUrl
   }
 
-  async function updateMemory(coverUrl: string, formData: FormData) {
+  async function updateMemory(formData: FormData) {
     await api.put(
       `/memories/${memory?.id}`,
       {
-        coverUrl,
+        coverUrl: formData.get('coverUrl'),
         content: formData.get('content'),
         isPublic: formData.get('isPublic'),
+        createdAt: formData.get('createdAt'),
       },
       {
         headers: {
@@ -112,6 +121,11 @@ export function MemoryForm({ oldMemory }: Props) {
       </div>
 
       <MediaPicker oldPreview={memory?.coverUrl} />
+      <DTimePicker
+        memoryDateTime={memoryDateTime}
+        changeMemoryDateTime={setMemoryDateTime}
+      />
+
       <textarea
         name="content"
         spellCheck="false"
